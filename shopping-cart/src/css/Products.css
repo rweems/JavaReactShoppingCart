@@ -1,0 +1,17 @@
+#cart{
+    
+}
+
+.cardstuff {
+    
+    width:'20rem';
+    border:'solid 2px';
+    margin:'0px 30px'; 
+    display:'inline-block';
+}
+
+span {
+    font-style: italic;
+    float: right;
+    padding-right: 10px;
+}
