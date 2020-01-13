@@ -1,13 +1,11 @@
-#cart{
-    
-}
+
 
 .cardstuff {
+    position:relative;
+    margin: auto;
+    text-align: center;
+  
     
-    width:'20rem';
-    border:'solid 2px';
-    margin:'0px 30px'; 
-    display:'inline-block';
 }
 
 span {
