@@ -6,19 +6,16 @@ class Products extends Component{
     state = {}
     render() {
         return (
-            <div>
+            <div class="container mt-5">
                 
-                <Card style={{width:'20rem', border:'solid 2px', margin:'10px 30px', display:'inline-block'}}>
-                    
-                    <br />
-                        <Card.Img src={require('../img/mac.jpg')}  alt="card img"/>
-                    
-                    <Card.Body>Designed for those who defy limits and change the world, the new MacBook Pro 
-                        is by far the most powerful notebook we’ve ever made. 
-                    </Card.Body>
-                    <Card.Title style={{textAlign:'center'}}>Macbook Pro <span>$1000</span></Card.Title>
-                    Qty:<input type="number" name="qty"/> <button>Add to Cart</button>
-                </Card>
+                <div class="card" style={{width: "18rem"}}>
+                    <img class="card-img-top" src={require('../img/mac.jpg')} alt="Card image cap"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
 
             </div>
         );
