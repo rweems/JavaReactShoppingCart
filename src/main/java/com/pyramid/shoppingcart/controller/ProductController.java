@@ -37,7 +37,7 @@ public class ProductController {
 	public void addProduct(@RequestParam("file") MultipartFile file, @RequestParam("product") String product) throws IOException {
 		JSONObject jsonObject = new JSONObject(product);
 		product u = new product();
-		u.setName(jsonObject.getString("name"));
+		u.setName(jsonObject.getString("pname"));
 		u.setPrice(jsonObject.getDouble("price"));
 		u.setImage(file.getBytes());
 		u.setDescription(jsonObject.getString("description"));
