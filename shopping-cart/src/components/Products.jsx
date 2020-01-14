@@ -1,23 +1,33 @@
 import React, {Component} from "react";
-import {Card} from 'react-bootstrap';
-import cardstuff from '../css/Products.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import '../css/Products.css';
+
 
 class Products extends Component{
     state = {}
     render() {
         return (
-            <div class="container mt-5">
+
+            <div class="container">
                 
-                <div class="card" style={{width: "18rem"}}>
-                    <img class="card-img-top" src={require('../img/mac.jpg')} alt="Card image cap"/>
+                <div class="card" style={{width:'20rem'}}>
+                    <img src={require('../img/mac.jpg')} class="card-img-top" />
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        
+                        <p class="card-text">Designed for those who defy limits and change the world, the new MacBook Pro 
+                        is by far the most powerful notebook we’ve ever made. </p>
+                        <h5 class="card-title">Macbook Pro<span>$1000</span></h5>
+                        <div className="cardstuff">
+                            Qty:<input type="number" style={{width:"50px"}} min="1" maxlength="3" name="qty"/> 
+                            <button><FontAwesomeIcon icon={faShoppingCart} /></button>
+                        </div>
                     </div>
                 </div>
 
             </div>
+
+
         );
     }
 }
