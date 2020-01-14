@@ -9,6 +9,7 @@ class AddProduct extends Component {
         descriptioin: '',
         price:''
      }
+     
 
     fileSelectHandler = event => {
         this.setState({
