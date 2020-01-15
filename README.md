@@ -1,6 +1,6 @@
 # JavaReactShoppingCart
 
-Font awesome Icon
+###Font awesome Icon
 
 
 $ npm i --save @fortawesome/fontawesome-svg-core
@@ -12,13 +12,13 @@ $ npm i --save @fortawesome/free-solid-svg-icons
 $ npm i --save @fortawesome/react-fontawesome
 
 
-Axios
+###Axios
 
 
 $ npm install axios
 
 
-React Bootstrap
+###React Bootstrap
 
 
 $ npm install react-bootstrap
