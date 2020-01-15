@@ -8,6 +8,7 @@ class Products extends Component{
     state = {}
     render() {
         return (
+
             <div class="container">
                 
                 <div class="card" style={{width:'20rem'}}>
@@ -23,7 +24,7 @@ class Products extends Component{
                         </div>
                     </div>
                 </div>
-  
+
             </div>
 
 
