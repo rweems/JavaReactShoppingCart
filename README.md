@@ -21,10 +21,10 @@ $ npm install axios
 React Bootstrap
 
 
-npm install react-bootstrap
+$ npm install react-bootstrap
 
 
 React router
 
 
-npm install --save react-router-dom
+$ npm install --save react-router-dom
