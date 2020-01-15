@@ -13,7 +13,11 @@ class Products extends Component{
         this.display();
     }
     state = {
-        prodcuts:[]
+        prodcuts:[],
+        qty:''
+    }
+    onchange=(e)=>{
+        this.setState({[e.target.name]: e.target.value});
     }
 
     display = () => {
@@ -23,29 +27,35 @@ class Products extends Component{
       })
     }
     addtocart = (id) =>{
-        console.log(id);
+      const params = new URLSearchParams();
+        params.append('id', id);
+        params.append('qty', this.state.qty);
+        axios.post(`http://localhost:8080/orders`, params).then((res)=>{
+             alert("Added to Cart");
+         });
+         document.getElementById('qty').value='';
+       
     }
 
     render() {
-        const productList = this.state.prodcuts.map(function(product){
-            return (<Col sm={4}> <div class="card" style={{width:'20rem',marginTop:'30px'}}>
+        
+        return (
+            
+            <Container>
+                <Row>
+                    {this.state.prodcuts.map((product) =>(
+            <Col sm={4}> <div class="card" style={{width:'20rem',marginTop:'30px'}}>
             <img src={`data:image/png;base64,${product.image}`} style={{height:'20rem'}}class="card-img-top" />
             <div class="card-body">
                 
                 <p class="card-text"style={{width:'20rem'}}>{product.description.length} </p>
                 <h5 class="card-title">{product.name}<span>{product.price}</span></h5>
                 <div className="cardstuff">
-                    Qty:<input type="number" style={{width:"50px"}} min="1" maxlength="3" name="qty"/> 
-                    <button onClick={this.addtocart.bind(this,1)}><FontAwesomeIcon icon={faShoppingCart} /></button>
+                    Qty:<input type="number" id="qty" name="qty" onChange={this.onchange}style={{width:"50px"}} min="1" maxlength="3" name="qty"/> 
+                    <button onClick={(e) => this.addtocart(product.id)}><FontAwesomeIcon icon={faShoppingCart} /></button>
                 </div>
             </div>
-        </div></Col>);
-          });
-        return (
-            
-            <Container>
-                <Row>
-                    {productList}
+        </div></Col>))}
                 </Row>
             </Container>
 

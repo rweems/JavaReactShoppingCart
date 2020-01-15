@@ -4,13 +4,19 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pyramid.shoppingcart.Repository.OrderRepository;
 import com.pyramid.shoppingcart.model.order;
 
+@Service
 public class OrderService {
 
 	@Autowired private OrderRepository or;
+	
+	public void save(order o) {
+		or.save(o);
+	}
 	
 	public List<order> getAllOrders(){
 		return or.findAll();
@@ -28,6 +34,10 @@ public class OrderService {
 	
 	public void deleteCart() {
 		or.deleteAll();
+	}
+	
+	public Optional<order> find(Long Id) {
+		return or.findById(Id);
 	}
 	
 }
