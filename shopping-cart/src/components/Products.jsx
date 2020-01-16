@@ -33,7 +33,9 @@ class Products extends Component{
         axios.post(`http://localhost:8080/orders`, params).then((res)=>{
              alert("Added to Cart");
          });
-         document.getElementById('qty').value='';
+         for(let i=0; i<document.getElementsByClassName('qty').length;i++){
+            document.getElementsByClassName('qty')[i].value = '';
+         }
        
     }
 
@@ -41,17 +43,17 @@ class Products extends Component{
         
         return (
             
-            <Container>
+            <Container style={{background:"white", marginTop:"5%"}}>
                 <Row>
                     {this.state.prodcuts.map((product) =>(
             <Col sm={4}> <div class="card" style={{width:'20rem',marginTop:'30px'}}>
             <img src={`data:image/png;base64,${product.image}`} style={{height:'20rem'}}class="card-img-top" />
             <div class="card-body">
                 
-                <p class="card-text"style={{width:'20rem'}}>{product.description.length} </p>
+                <p class="card-text"style={{width:'20rem'}}>{product.description} </p>
                 <h5 class="card-title">{product.name}<span>{product.price}</span></h5>
                 <div className="cardstuff">
-                    Qty:<input type="number" id="qty" name="qty" onChange={this.onchange}style={{width:"50px"}} min="1" maxlength="3" name="qty"/> 
+                    Qty:<input type="number" className="qty" name="qty" onChange={this.onchange}style={{width:"50px"}} min="1" maxlength="3" name="qty"/> 
                     <button onClick={(e) => this.addtocart(product.id)}><FontAwesomeIcon icon={faShoppingCart} /></button>
                 </div>
             </div>
