@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -55,5 +56,18 @@ public class OrderController {
 	}
 
 
+	@PutMapping("/plus")
+	public void incqty(@RequestParam("id")Long id, @RequestParam("qty")int qty) {
+		Optional<order> foundorder = os.find(id);
+		foundorder.get().setQuantity(qty);
+		os.save(foundorder.get());
+	}
+	
+	@PutMapping("/minus")
+	public void decqty(@RequestParam("id")Long id, @RequestParam("qty")int qty) {
+		Optional<order> foundorder = os.find(id);
+		foundorder.get().setQuantity(qty);
+		os.save(foundorder.get());
+	}
 	
 }

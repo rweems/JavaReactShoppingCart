@@ -35,7 +35,7 @@ class AddProduct extends Component {
 
     render() { 
         return ( 
-            <div className="container mt-5" style={{maxWidth:"500px"}}> 
+            <div className="container mt-5" style={{maxWidth:"500px",minHeight:"700px"}}> 
                 <Form onSubmit={this.display}>
                 <Form.Group  value={this.state.pname} onChange={this.onChange} controlId="PName">
                     <Form.Label>Product Name</Form.Label>
