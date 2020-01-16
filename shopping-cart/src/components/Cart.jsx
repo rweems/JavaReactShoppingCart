@@ -61,7 +61,7 @@ class Cart extends Component {
     render() { 
       var olen = this.state.orders.length;
         return (
-            <Container style={{minHeight:"700px"}} > 
+            <Container  >
               {olen>0 &&
               <Row className="mt-5">
                 <Table responsive className="text-center" style={{background:"white", marginTop:"5%"}}>
