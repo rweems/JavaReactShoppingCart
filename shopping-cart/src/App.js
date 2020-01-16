@@ -20,7 +20,7 @@ class App extends Component{
                   <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="/">Products <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Products</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/addproduct">Add Product</a>
